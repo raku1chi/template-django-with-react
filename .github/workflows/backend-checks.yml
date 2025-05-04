@@ -112,4 +112,4 @@ jobs:
           DB_USER: user
           DB_PASSWORD: password
         run: |
-          python -m pytest
+          python manage.py test
