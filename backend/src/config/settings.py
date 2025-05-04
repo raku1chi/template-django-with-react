@@ -41,9 +41,9 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "corsheaders",  # CORS対応のため追加
-    "rest_framework",  # REST API対応のため追加
-    "api",  # 作成するAPIアプリ
+    "corsheaders",
+    "rest_framework",
+    "api",
 ]
 
 MIDDLEWARE = [
