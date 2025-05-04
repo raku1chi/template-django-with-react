@@ -24,8 +24,6 @@ RUN uv sync --frozen
 
 COPY . .
 
-WORKDIR /app/src
-
 EXPOSE 8000
 
 CMD ["uv", "run", "manage.py", "runserver", "0.0.0.0:8000"]
