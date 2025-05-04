@@ -99,7 +99,7 @@ jobs:
           DB_USER: user
           DB_PASSWORD: password
         run: |
-          python manage.py migrate
+          python src/manage.py migrate
 
       - name: Test with pytest
         env:
@@ -112,4 +112,4 @@ jobs:
           DB_USER: user
           DB_PASSWORD: password
         run: |
-          python manage.py test
+          python src/manage.py test
