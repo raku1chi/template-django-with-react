@@ -20,7 +20,7 @@ WORKDIR /app
 
 COPY pyproject.toml .
 COPY uv.lock .
-RUN uv sync --frozen
+RUN uv sync --locked
 
 COPY . .
 
