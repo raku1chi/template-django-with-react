@@ -1,4 +1,4 @@
-# Django + React テンプレート
+# Django RestFramework + React テンプレート
 
 このリポジトリは、モダンな SPA 開発のための Django RestFramework + React テンプレートプロジェクトです。
 
