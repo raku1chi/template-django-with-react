@@ -90,6 +90,9 @@ docker compose exec frontend pnpm dev
 
 # ビルド
 docker compose exec frontend pnpm build
+
+# リンティング
+docker compose exec frontend pnpm lint
 ```
 
 ## CI/CD
@@ -98,6 +101,10 @@ docker compose exec frontend pnpm build
 
 - バックエンドの静的チェック (リンティング、型チェック、セキュリティチェック、テスト)
 - バックエンドのビルドとマイグレーションテスト
+- フロントエンドの静的チェック (リンティング、型チェック)
+- フロントエンドのビルドテスト
+
+また、Dependabotによる依存関係の自動更新も設定されています。
 
 ## ライセンス
 
