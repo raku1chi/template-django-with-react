@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from rest_framework import status, viewsets
+from rest_framework import viewsets
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
@@ -12,6 +12,7 @@ class TodoViewSet(viewsets.ModelViewSet):
     """
     TodoモデルのCRUD操作を行うViewSet
     """
+
     queryset = Todo.objects.all()
     serializer_class = TodoSerializer
 
