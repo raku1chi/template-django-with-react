@@ -1,8 +1,46 @@
 version: 2
 updates:
+  # バックエンドのPython依存関係の更新設定
   - package-ecosystem: "uv"
     directory: "/backend"
     schedule:
       interval: "weekly"
-    open-pull-requests-limit: 1
-    target-branch: main
+      day: "monday"
+    open-pull-requests-limit: 10
+    labels:
+      - "dependencies"
+      - "python"
+    commit-message:
+      prefix: "uv"
+      include: "scope"
+    reviewers:
+      - "nebulawalk"
+    versioning-strategy: "lockfile-only"
+
+  # フロントエンドのNode.js依存関係の更新設定
+  - package-ecosystem: "npm"
+    directory: "/frontend"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    open-pull-requests-limit: 10
+    labels:
+      - "dependencies"
+      - "javascript"
+    commit-message:
+      prefix: "npm"
+      include: "scope"
+    reviewers:
+      - "nebulawalk"
+    # pnpmを使用しているプロジェクトに対して
+    versioning-strategy: "lockfile-only"
+
+  # GitHub Actionsの依存関係の更新設定
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    open-pull-requests-limit: 5
+    labels:
+      - "dependencies"
+      - "github-actions"
