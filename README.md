@@ -70,13 +70,13 @@ docker compose exec backend uv run manage.py migrate
 docker compose exec backend uv run manage.py [command]
 
 # テストを実行
-docker compose exec backend python -m pytest
+docker compose exec backend uv run python -m pytest
 
 # リンティング
-docker compose exec backend ruff check .
+docker compose exec backend uv run ruff check .
 
 # フォーマット
-docker compose exec backend ruff format .
+docker compose exec backend uv run ruff format .
 ```
 
 #### フロントエンド
