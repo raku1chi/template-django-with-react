@@ -21,36 +21,30 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
         with:
-          python-version: "3.13"
-          cache: "pip"
+          enable-cache: true
 
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install ruff mypy bandit pytest 'django-stubs[compatible-mypy]'
-          pip install -e .
+      - name: Install the project
+        run: uv sync --locked --all-extras --dev
 
       - name: Lint and format check with Ruff
         run: |
-          # リンティングとフォーマットチェックを行う
-          ruff check .
-          # フォーマットチェックのみを行う
-          ruff format --check .
+          uv run ruff check .
+          uv run ruff format --check .
 
       - name: Type checking with mypy
         run: |
-          mypy --ignore-missing-imports .
+          uv run mypy --ignore-missing-imports .
 
       - name: Security check with bandit
         run: |
-          bandit -r . -x "**/.venv/*,**/test*.py"
+          uv run bandit -r . -x "**/.venv/*,**/test*.py"
 
       - name: Run tests
         run: |
-          python -m pytest
+          uv run pytest
 
   build:
     runs-on: ubuntu-latest
@@ -77,16 +71,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
         with:
-          python-version: "3.13"
-          cache: "pip"
+          enable-cache: true
 
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -e .
+      - name: Install the project
+        run: uv sync --locked --all-extras --dev
 
       - name: Run migrations
         env:
@@ -99,7 +90,7 @@ jobs:
           DB_USER: user
           DB_PASSWORD: password
         run: |
-          python manage.py migrate
+          uv run python manage.py migrate
 
       - name: Test with pytest
         env:
@@ -112,4 +103,4 @@ jobs:
           DB_USER: user
           DB_PASSWORD: password
         run: |
-          python manage.py test
+          uv run python manage.py test

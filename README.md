@@ -104,7 +104,7 @@ docker compose exec frontend pnpm lint
 - フロントエンドの静的チェック (リンティング、型チェック)
 - フロントエンドのビルドテスト
 
-また、Dependabotによる依存関係の自動更新も設定されています。
+また、Dependabot による依存関係の自動更新も設定されています。
 
 ## ライセンス
 
