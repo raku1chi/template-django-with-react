@@ -67,16 +67,16 @@ docker compose exec backend uv run manage.py migrate
 
 ```sh
 # Djangoの管理コマンドを実行
-docker compose exec backend uv run manage.py [command]
+docker compose exec backend python manage.py [command]
 
 # テストを実行
-docker compose exec backend uv run python -m pytest
+docker compose exec backend pytest
 
 # リンティング
-docker compose exec backend uv run ruff check .
+docker compose exec backend ruff check .
 
 # フォーマット
-docker compose exec backend uv run ruff format .
+docker compose exec backend ruff format .
 ```
 
 #### フロントエンド
