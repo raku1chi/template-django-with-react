@@ -14,7 +14,7 @@ updates:
       prefix: "uv"
       include: "scope"
     reviewers:
-      - "nebulawalk"
+      - "tsht0"
     versioning-strategy: "lockfile-only"
 
   # フロントエンドのNode.js依存関係の更新設定
@@ -31,7 +31,7 @@ updates:
       prefix: "npm"
       include: "scope"
     reviewers:
-      - "nebulawalk"
+      - "tsht0"
     # pnpmを使用しているプロジェクトに対して
     versioning-strategy: "lockfile-only"
 
