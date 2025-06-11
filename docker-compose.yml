@@ -3,10 +3,11 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile
+      args:
+        BUILD_GROUPS: "--group dev"
     environment:
       SECRET_KEY: your_secret_key
       DEBUG: 1
-      ALLOWED_HOSTS: localhost
       DB_HOST: db
       DB_PORT: 5432
       DB_NAME: app
@@ -14,7 +15,6 @@ services:
       DB_PASSWORD: password
     volumes:
       - ./backend:/app
-      - /app/.venv
     ports:
       - "8000:8000"
     depends_on:
