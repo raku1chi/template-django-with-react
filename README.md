@@ -52,7 +52,7 @@ docker compose up -d
 3. バックエンドのマイグレーションを実行します：
 
 ```sh
-docker compose exec backend uv run manage.py migrate
+docker compose exec backend python manage.py migrate
 ```
 
 ### 開発サーバー
