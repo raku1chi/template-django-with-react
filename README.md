@@ -39,7 +39,7 @@
 1. リポジトリをクローンします：
 
 ```sh
-git clone https://github.com/yourusername/template-django-with-react.git
+git clone https://github.com/tsht0/template-django-with-react.git
 cd template-django-with-react
 ```
 
