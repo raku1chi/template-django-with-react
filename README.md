@@ -105,7 +105,3 @@ docker compose exec frontend pnpm lint
 - フロントエンドのビルドテスト
 
 また、Dependabot による依存関係の自動更新も設定されています。
-
-## ライセンス
-
-このプロジェクトは MIT ライセンスの下で提供されています。
